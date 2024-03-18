@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23E214" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="BreathStep" representedClassName="BreathStep" syncable="YES">
+        <attribute name="breathTypeValue" optional="YES" attributeType="String"/>
+        <attribute name="duration" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="sortOrder" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="breathWorkout" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BreathWorkout" inverseName="breathSteps" inverseEntity="BreathWorkout"/>
+    </entity>
+    <entity name="BreathWorkout" representedClassName="BreathWorkout" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="breathSteps" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="BreathStep" inverseName="breathWorkout" inverseEntity="BreathStep"/>
+    </entity>
+</model>
